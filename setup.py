@@ -20,11 +20,10 @@ setup(
         'ddddocr',
     ],
     classifiers=[
-        'Programming Language :: Python :: 3',
         "Programming Language :: Python :: 3.12",
         'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
     ],
     keywords=['number operation captcha'],
-    python_requires='>=3.12'
+    python_requires='>=3.12',
+    zip_safe=True
 )
