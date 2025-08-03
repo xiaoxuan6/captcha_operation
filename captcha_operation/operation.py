@@ -6,13 +6,17 @@
  @Description: 计算数字运算结果
 """
 import ddddocr
+from PIL import Image
 
 ocr = ddddocr.DdddOcr(show_ad=False)
 
 
-def operation(img: str):
+def operation(img):
+    if not isinstance(img, (bytes, str, Image.Image)):
+        raise TypeError("未知图片类型")
+
     global total
-    text = ocr.classification(open(img, 'rb').read(), png_fix=True)
+    text = ocr.classification(img, png_fix=True)
     #  图片有干扰
     text = text.replace('F', '+')
 
